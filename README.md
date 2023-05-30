@@ -4,7 +4,7 @@ Just some scripts I made for mysql for the lulz.
 
 ## Create a schema and set default
 
-    CREATE SCHEMA `tysql` ;
+    CREATE SCHEMA `tysql`;
  
 Pretty sure I don't have to explain what create does; it creates the schema with the name `tysql`.
 
