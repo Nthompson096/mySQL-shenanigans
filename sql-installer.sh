@@ -6,6 +6,17 @@ if [ $EUID -ne 0 ]
 		exit 1
 fi
 
+# to see if it's ubuntu/debian based, will attempt to install if missing.
+
+if [ -f /usr/bin/mysql ]; then
+        echo "install found skipping!"
+
+elif [[ -f /usr/bin/apt ]]; then
+        echo "This system appears to be debian/ubuntu based; will install with apt." &&
+ sudo apt update && sudo apt upgrade && sudo apt install mysql-server -y
+fi
+
+
 # to see if the service is already started
 
 systemctl start mysql.service &&
